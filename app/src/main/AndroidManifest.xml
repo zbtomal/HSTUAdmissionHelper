@@ -13,6 +13,18 @@
         android:theme="@style/Theme.HSTUAdmissionHelper"
         tools:targetApi="31">
         <activity
+            android:name=".NoticBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImportantDatesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TransportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomFinder"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
