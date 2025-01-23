@@ -13,7 +13,7 @@
         android:theme="@style/Theme.HSTUAdmissionHelper"
         tools:targetApi="31">
         <activity
-            android:name=".NoticBoardActivity"
+            android:name=".NoticeBoardActivity"
             android:exported="false" />
         <activity
             android:name=".ImportantDatesActivity"
