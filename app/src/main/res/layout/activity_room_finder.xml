@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:background="#95002540"
         android:ems="10"
-        android:hint="      Enter   your   roll"
+        android:hint="Enter your roll number"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +45,7 @@
         android:layout_width="355dp"
         android:layout_height="163dp"
         android:background="#95002540"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
