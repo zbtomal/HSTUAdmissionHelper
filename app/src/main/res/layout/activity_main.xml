@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
     <ImageView
@@ -21,13 +22,13 @@
         app:srcCompat="@drawable/hstu_main_gate" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imgbtn_room"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:background="@drawable/rounded_corner_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.181"
@@ -37,6 +38,7 @@
         android:id="@+id/txt_room_find_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="356dp"
         android:text="Room Finder"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -44,9 +46,71 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn_room"
+        app:layout_constraintVertical_bias="0.22" />
 
+    <ImageButton
+        android:id="@+id/imgbtn_transport"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_corner_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_room"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.181"
+        app:srcCompat="@drawable/transport_icon" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="67dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Transport Info"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toEndOf="@+id/txt_room_find_button"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn_transport"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_important_dates"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corner_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_transport"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.181"
+        app:srcCompat="@drawable/important_dates_icon" />
+
+    <TextView
+        android:id="@+id/txt_important_dates_btn"
+        android:layout_width="67dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Important Dates"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn_important_dates"
+        app:layout_constraintVertical_bias="0.007" />
 </androidx.constraintlayout.widget.ConstraintLayout>
