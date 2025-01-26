@@ -14,10 +14,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton btn_room;
-    ImageButton btn_transport;
-    ImageButton btn_important;
-    Button btn_notice;
+    //ImageButton btn_room;
+    //ImageButton btn_transport;
+    //ImageButton btn_important;
+    //Button btn_notice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Initialize the buttons
+      /*  // Initialize the buttons
         btn_room = findViewById(R.id.imgbtn_room);
         btn_transport = findViewById(R.id.imgbtn_transport);
         btn_important = findViewById(R.id.imgbtn_important_dates);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* btn_notice.setOnClickListener(new View.OnClickListener() {
+        btn_notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, NoticeBoardActivity.class);
