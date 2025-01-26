@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,12 @@ import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     CardView noticeCard;
     CardView resultCard;
     CardView moreCard;
+
+    ImageSlider imageSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +130,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        // Image Slider
+        imageSlider=findViewById(R.id.imageSlider);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.hstu_main_gate, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_img2, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_img3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_img4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_img5, ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
