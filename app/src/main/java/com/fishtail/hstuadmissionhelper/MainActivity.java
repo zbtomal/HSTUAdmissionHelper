@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,11 +22,6 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    //ImageButton btn_room;
-    //ImageButton btn_transport;
-    //ImageButton btn_important;
-    //Button btn_notice;
 
     CardView roomCard;
     CardView transportCard;
@@ -42,47 +38,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-
-
-
-      /*  // Initialize the buttons
-        btn_room = findViewById(R.id.imgbtn_room);
-        btn_transport = findViewById(R.id.imgbtn_transport);
-        btn_important = findViewById(R.id.imgbtn_important_dates);
-        //btn_notice = findViewById(R.id.btn_Notice);
-
-        // Set click listeners for the buttons
-        btn_room.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RoomFinder.class);
-                startActivity(intent);
-            }
-        });
-
-        btn_transport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TransportActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btn_important.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ImportantDatesActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btn_notice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NoticeBoardActivity.class);
-                startActivity(intent);
-            }
-        }); */
 
         roomCard = findViewById(R.id.roomCard);
         transportCard = findViewById(R.id.transportCard);
