@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HSTU Admission Helper</string>
+    <string name="transportinfo">Transport Information</string>
 </resources>

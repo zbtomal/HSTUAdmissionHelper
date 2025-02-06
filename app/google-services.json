@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502747219048",
+    "project_id": "demo1-d7387",
+    "storage_bucket": "demo1-d7387.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502747219048:android:6fcc25e6042a7dca02e7dd",
+        "android_client_info": {
+          "package_name": "com.fishtail.hstuadmissionhelper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKQD8X59uP8-BT44tpsLC9bxxNHdOf9vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
