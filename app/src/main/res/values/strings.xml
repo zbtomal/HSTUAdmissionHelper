@@ -1,4 +1,106 @@
 <resources>
     <string name="app_name">HSTU Admission Helper</string>
     <string name="transportinfo">Transport Information</string>
+
+
+    <string-array name="divisions">
+        <item>Dhaka</item>
+        <item>Chattogram</item>
+        <item>Khulna</item>
+        <item>Rajshahi</item>
+        <item>Barishal</item>
+        <item>Sylhet</item>
+        <item>Rangpur</item>
+        <item>Mymensingh</item>
+    </string-array>
+
+    <string-array name="dhaka_districts">
+        <item>Dhaka</item>
+        <item>Faridpur</item>
+        <item>Gazipur</item>
+        <item>Gopalganj</item>
+        <item>Kishoreganj</item>
+        <item>Madaripur</item>
+        <item>Manikganj</item>
+        <item>Munshiganj</item>
+        <item>Narayanganj</item>
+        <item>Narsingdi</item>
+        <item>Rajbari</item>
+        <item>Shariatpur</item>
+        <item>Tangail</item>
+    </string-array>
+
+    <string-array name="chattogram_districts">
+        <item>Chattogram</item>
+        <item>Cox\'s Bazar</item>
+        <item>Khagrachari</item>
+        <item>Bandarban</item>
+        <item>Rangamati</item>
+        <item>Noakhali</item>
+        <item>Feni</item>
+        <item>Lakshmipur</item>
+        <item>Brahmanbaria</item>
+        <item>Chandpur</item>
+        <item>Cumilla</item>
+        <item>Chattogram (City Corporation)</item>
+    </string-array>
+
+    <string-array name="khulna_districts">
+        <item>Bagerhat</item>
+        <item>Chuadanga</item>
+        <item>Jashore</item>
+        <item>Jhenaidah</item>
+        <item>Khulna</item>
+        <item>Kushtia</item>
+        <item>Magura</item>
+        <item>Meherpur</item>
+        <item>Narail</item>
+        <item>Satkhira</item>
+    </string-array>
+
+    <string-array name="rajshahi_districts">
+        <item>Bogra</item>
+        <item>Joypurhat</item>
+        <item>Naogaon</item>
+        <item>Natore</item>
+        <item>Pabna</item>
+        <item>Rajshahi</item>
+        <item>Sirajganj</item>
+        <item>Chapainawabganj</item>
+    </string-array>
+
+    <string-array name="barishal_districts">
+        <item>Barishal</item>
+        <item>Barguna</item>
+        <item>Bhola</item>
+        <item>Jhalokati</item>
+        <item>Patuakhali</item>
+        <item>Pirojpur</item>
+    </string-array>
+
+    <string-array name="sylhet_districts">
+        <item>Habiganj</item>
+        <item>Moulvibazar</item>
+        <item>Sunamganj</item>
+        <item>Sylhet</item>
+    </string-array>
+
+    <string-array name="rangpur_districts">
+        <item>Dinajpur</item>
+        <item>Gaibandha</item>
+        <item>Kurigram</item>
+        <item>Lalmonirhat</item>
+        <item>Nilphamari</item>
+        <item>Panchagarh</item>
+        <item>Rangpur</item>
+        <item>Thakurgaon</item>
+    </string-array>
+
+    <string-array name="mymensingh_districts">
+        <item>Jamalpur</item>
+        <item>Mymensingh</item>
+        <item>Netrokona</item>
+        <item>Sherpur</item>
+    </string-array>
+
 </resources>
