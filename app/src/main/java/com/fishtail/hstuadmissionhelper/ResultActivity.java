@@ -1,10 +1,12 @@
 package com.fishtail.hstuadmissionhelper;
 
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,15 +16,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ResultActivity extends AppCompatActivity {
 
+
     EditText edt_roll_result;
     TextView txt_result;
     Button btn_show_result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_result);
+
 
         edt_roll_result = findViewById(R.id.edt_roll_result);
         txt_result = findViewById(R.id.txt_result);
@@ -37,6 +42,7 @@ public class ResultActivity extends AppCompatActivity {
                                                    txt_result.setVisibility(View.VISIBLE);
                                                }
                                            });
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
