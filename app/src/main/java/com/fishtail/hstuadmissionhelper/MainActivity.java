@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        //forced light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         roomCard = findViewById(R.id.roomCard);
         transportCard = findViewById(R.id.transportCard);
