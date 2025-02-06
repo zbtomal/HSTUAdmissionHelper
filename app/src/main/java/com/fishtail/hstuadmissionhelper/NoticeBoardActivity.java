@@ -19,7 +19,10 @@ public class NoticeBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notice_board);
 
         WebView webview = findViewById(R.id.web);
-        webview.loadUrl("https://github.com/jannat-shanto");
+
+     
+
+        webview.loadUrl("https://hstu.ac.bd/admission/index");
 
         webview.getSettings().setJavaScriptEnabled(true);
         webview.setWebViewClient(new WebViewClient());
