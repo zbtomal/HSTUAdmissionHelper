@@ -39,6 +39,11 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore") // Firestore
     implementation("com.google.android.gms:play-services-base:18.2.0") // Google Services Base
 
+    // Maps
+    implementation ("com.google.android.gms:play-services-maps:17.0.1")
+    implementation ("com.google.android.gms:play-services-location:17.0.0")
+
+
     // AndroidX Libraries
     implementation(libs.appcompat)
     implementation(libs.material)

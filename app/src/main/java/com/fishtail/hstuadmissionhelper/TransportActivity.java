@@ -114,6 +114,9 @@ public class TransportActivity extends AppCompatActivity {
             case "Rajshahi":
                 scrollText.setText("Buses: Desh Travels, Hanif\nTrain: Silk City Express, Dhumketu Express");
                 break;
+            case "Bogra":
+                scrollText.setText(R.string.BograTransport);
+                break;
             default:
                 scrollText.setText("Select a district to see transport options.");
         }
