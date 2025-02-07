@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class TransportActivity extends AppCompatActivity {
 
     private Spinner spinnerDivision, spinnerDistrict;
+    private TextView scrollText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,10 @@ public class TransportActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Initialize Spinners
+        // Initialize views
         spinnerDivision = findViewById(R.id.spinner_division);
         spinnerDistrict = findViewById(R.id.spinner_district);
+        scrollText = findViewById(R.id.scrollText);
 
         // Setup Division Spinner
         ArrayAdapter<CharSequence> divisionAdapter = ArrayAdapter.createFromResource(
@@ -49,6 +52,19 @@ public class TransportActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // No action needed
+            }
+        });
+
+        // District Spinner listener to update ScrollText
+        spinnerDistrict.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                updateScrollText(spinnerDistrict.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                scrollText.setText("");
             }
         });
 
@@ -80,6 +96,26 @@ public class TransportActivity extends AppCompatActivity {
                     this, districtArrayResId, android.R.layout.simple_spinner_item);
             districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerDistrict.setAdapter(districtAdapter);
+        }
+    }
+
+    /**
+     * Updates the scrollText with transport information based on selected district.
+     */
+    private void updateScrollText(String district) {
+        // Example: Set custom transport info based on selected district
+        switch (district) {
+            case "Dhaka":
+                scrollText.setText("Buses: Hanif, Green Line, Shohag\nTrain: Ekota Express, Drutojan Express");
+                break;
+            case "Chattogram":
+                scrollText.setText("Buses: Shyamoli, Ena\nTrain: Mahanagar Express, Turna Express");
+                break;
+            case "Rajshahi":
+                scrollText.setText("Buses: Desh Travels, Hanif\nTrain: Silk City Express, Dhumketu Express");
+                break;
+            default:
+                scrollText.setText("Select a district to see transport options.");
         }
     }
 }
