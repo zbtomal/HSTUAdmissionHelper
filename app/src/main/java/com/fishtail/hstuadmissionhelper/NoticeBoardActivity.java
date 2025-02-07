@@ -18,7 +18,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        EdgeToEdge.enable(this);
+        //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_notice_board);
 
         WebView webview = findViewById(R.id.web);
