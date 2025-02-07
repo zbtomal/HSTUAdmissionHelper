@@ -4,6 +4,7 @@
 
 
     <string-array name="divisions">
+        <item>Select Division</item>
         <item>Dhaka</item>
         <item>Chattogram</item>
         <item>Khulna</item>
@@ -12,6 +13,10 @@
         <item>Sylhet</item>
         <item>Rangpur</item>
         <item>Mymensingh</item>
+    </string-array>
+
+    <string-array name="districts_default">
+        <item>Select District</item>
     </string-array>
 
     <string-array name="dhaka_districts">

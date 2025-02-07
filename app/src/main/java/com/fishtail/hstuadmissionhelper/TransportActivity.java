@@ -35,10 +35,7 @@ public class TransportActivity extends AppCompatActivity {
 
         // Setup Division Spinner
         ArrayAdapter<CharSequence> divisionAdapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.divisions,
-                android.R.layout.simple_spinner_item
-        );
+                this, R.array.divisions, android.R.layout.simple_spinner_item);
         divisionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDivision.setAdapter(divisionAdapter);
 
@@ -46,79 +43,43 @@ public class TransportActivity extends AppCompatActivity {
         spinnerDivision.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ArrayAdapter<CharSequence> districtAdapter;
-
-                switch (position) {
-                    case 0: // Dhaka Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.dhaka_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 1: // Chattogram Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.chattogram_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 2: // Khulna Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.khulna_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 3: // Rajshahi Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.rajshahi_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 4: // Barishal Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.barishal_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 5: // Sylhet Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.sylhet_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 6: // Rangpur Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.rangpur_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    case 7: // Mymensingh Division
-                        districtAdapter = ArrayAdapter.createFromResource(
-                                TransportActivity.this,
-                                R.array.mymensingh_districts,
-                                android.R.layout.simple_spinner_item
-                        );
-                        break;
-                    default:
-                        districtAdapter = null;
-                }
-
-                if (districtAdapter != null) {
-                    districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    spinnerDistrict.setAdapter(districtAdapter);
-                }
+                updateDistrictSpinner(position);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Handle case when nothing is selected (optional)
+                // No action needed
             }
         });
+
+        // Set default division selection to prevent empty district spinner
+        spinnerDivision.setSelection(0);
+        updateDistrictSpinner(0);
+    }
+
+    /**
+     * Updates the district spinner based on selected division.
+     */
+    private void updateDistrictSpinner(int divisionIndex) {
+        int districtArrayResId;
+        switch (divisionIndex) {
+            case 0: districtArrayResId = R.array.districts_default; break;
+            case 1: districtArrayResId = R.array.dhaka_districts; break;
+            case 2: districtArrayResId = R.array.chattogram_districts; break;
+            case 3: districtArrayResId = R.array.khulna_districts; break;
+            case 4: districtArrayResId = R.array.rajshahi_districts; break;
+            case 5: districtArrayResId = R.array.barishal_districts; break;
+            case 6: districtArrayResId = R.array.sylhet_districts; break;
+            case 7: districtArrayResId = R.array.rangpur_districts; break;
+            case 8: districtArrayResId = R.array.mymensingh_districts; break;
+            default: districtArrayResId = -1;
+        }
+
+        if (districtArrayResId != -1) {
+            ArrayAdapter<CharSequence> districtAdapter = ArrayAdapter.createFromResource(
+                    this, districtArrayResId, android.R.layout.simple_spinner_item);
+            districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerDistrict.setAdapter(districtAdapter);
+        }
     }
 }
