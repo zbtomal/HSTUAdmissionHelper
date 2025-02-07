@@ -1,8 +1,6 @@
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
-
-
 }
 
 android {
@@ -28,25 +26,32 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17 // Updated to Java 17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 dependencies {
-    implementation(libs.firebase.bom)
-    implementation(libs.google.firebase.firestore)
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.3")) // Ensure latest BOM version
+    implementation("com.google.firebase:firebase-firestore") // Firestore
+    implementation("com.google.android.gms:play-services-base:18.2.0") // Google Services Base
+
+    // AndroidX Libraries
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.play.services.maps)
-    implementation(libs.firebase.firestore)
+
+    // UI Components
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.0")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("androidx.cardview:cardview:1.0.0")
-    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.0")
-
 }
