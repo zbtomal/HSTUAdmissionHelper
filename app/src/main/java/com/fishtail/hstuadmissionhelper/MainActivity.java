@@ -88,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        moreCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, More.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Image Slider
         imageSlider=findViewById(R.id.imageSlider);
