@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HSTUAdmissionHelper"
         tools:targetApi="31">
+        <activity
+            android:name=".AboutHSTUActivity"
+            android:exported="false" />
         <activity
             android:name=".More"
             android:exported="false" />
@@ -47,6 +49,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".MyFirebaseMessagingService"
             android:enabled="true"

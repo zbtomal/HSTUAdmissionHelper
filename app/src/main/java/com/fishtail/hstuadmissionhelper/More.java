@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class More extends AppCompatActivity {
 
-
+    Button btn_about_hstu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,16 @@ public class More extends AppCompatActivity {
         setContentView(R.layout.activity_more);
 
         // Initialize buttons
+        btn_about_hstu=findViewById(R.id.btn_about_HSTU);
 
+        btn_about_hstu.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(More.this, AboutHSTUActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
