@@ -38,6 +38,10 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.3")) // Ensure latest BOM version
     implementation("com.google.firebase:firebase-firestore") // Firestore
     implementation("com.google.android.gms:play-services-base:18.2.0") // Google Services Base
+   //Cloud Messaging
+    implementation("com.google.firebase:firebase-messaging")
+    implementation ("com.google.firebase:firebase-auth")
+    implementation ("com.google.android.gms:play-services-auth:20.3.0")
 
     // Maps
     implementation ("com.google.android.gms:play-services-maps:17.0.1")
