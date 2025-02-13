@@ -104,10 +104,14 @@ public class RoomFinder extends AppCompatActivity {
                 } else {
                     txt_room_info.setText("No room assigned for this roll.");
                     txt_room_info.setVisibility(View.VISIBLE);
+                    img_map.setVisibility(View.GONE);
+                    btn_google_map.setVisibility(View.GONE);
                 }
             } else {
                 txt_room_info.setText("Error fetching data.");
                 txt_room_info.setVisibility(View.VISIBLE);
+                img_map.setVisibility(View.GONE);
+                btn_google_map.setVisibility(View.GONE);
             }
         }).addOnFailureListener(e -> {
             Toast.makeText(RoomFinder.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
