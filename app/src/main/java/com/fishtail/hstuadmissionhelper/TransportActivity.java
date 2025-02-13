@@ -134,7 +134,7 @@ public class TransportActivity extends AppCompatActivity {
             case "Pabna":
                 scrollText.setText(R.string.pabna_to_dinajpur);
                 break;
-            case "Nator":
+            case "Natore":
                 scrollText.setText(R.string.natore_to_dinajpur);
                 break;
 
