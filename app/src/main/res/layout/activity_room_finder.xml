@@ -1,74 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:autofillHints="Enter your roll "
+    android:padding="16dp"
     android:background="@drawable/main_background"
     tools:context=".RoomFinder">
 
+    <!-- Unit Selection Label -->
+
+    <!-- Unit Selection Dropdown -->
+
+    <TextView
+        android:id="@+id/txt_unit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Your Unit"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/spinner_unit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <Spinner
+        android:id="@+id/spinner_unit"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="#9CFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/txt_unit_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txt_roll_label"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <!-- Roll Number Label -->
+
+    <!-- Roll Number Input -->
+    <TextView
+        android:id="@+id/txt_roll_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Roll"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/edt_roll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_unit"
+        app:layout_constraintVertical_bias="0.02" />
 
     <EditText
         android:id="@+id/edt_roll"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-
+        android:layout_height="45dp"
         android:background="#9CFFFFFF"
-
-        android:ems="10"
         android:hint="Enter your roll number"
         android:inputType="number"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toBottomOf="@id/txt_roll_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_submit_roll"
+        app:layout_constraintVertical_bias="0.02" />
 
+    <!-- Find Button -->
     <Button
         android:id="@+id/btn_submit_roll"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
         android:backgroundTint="#002540"
         android:text="Find"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toBottomOf="@id/edt_roll"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_roll"
-        app:layout_constraintVertical_bias="0.013" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txt_room_info"
+        app:layout_constraintVertical_bias="0.03" />
 
+    <!-- Room Info Display -->
     <TextView
         android:id="@+id/txt_room_info"
-        android:layout_width="355dp"
-        android:layout_height="162dp"
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#5F002540"
-
-
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btn_submit_roll"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_submit_roll"
-        app:layout_constraintVertical_bias="0.134" />
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="355dp"
-        android:layout_height="249dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_room_info"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
