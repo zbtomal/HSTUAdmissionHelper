@@ -106,19 +106,33 @@ public class TransportActivity extends AppCompatActivity {
         // Example: Set custom transport info based on selected district
         switch (district) {
             case "Dhaka":
-                scrollText.setText("Buses: Hanif, Green Line, Shohag\nTrain: Ekota Express, Drutojan Express");
+                scrollText.setText(R.string.dhaka_to_dinajpur);
                 break;
             case "Chattogram":
-                scrollText.setText("Buses: Shyamoli, Ena\nTrain: Mahanagar Express, Turna Express");
+                scrollText.setText(R.string.chattogram_to_dinajpur);
                 break;
             case "Rajshahi":
                 scrollText.setText("Buses: Desh Travels, Hanif\nTrain: Silk City Express, Dhumketu Express");
                 break;
+            case "Tangail":
+            case "Sirajganj":
             case "Bogra":
-                scrollText.setText(R.string.BograTransport);
+                scrollText.setText(R.string.bogra_to_dinajpur);
+                break;
+            case "Cumilla":
+                scrollText.setText(R.string.cumilla_to_dinajpur);
+                break;
+
+            case "Noakhali":
+                scrollText.setText(R.string.noakhali_to_dinajpur);
+                break;
+
+            case "Chandpur":
+                scrollText.setText(R.string.chandpur_to_dinajpur);
                 break;
             default:
                 scrollText.setText("Select a district to see transport options.");
+
         }
     }
 }
