@@ -132,6 +132,8 @@ public class TransportActivity extends AppCompatActivity {
                 break;
 
             case "Pabna":
+                scrollText.setText(R.string.pabna_to_dinajpur);
+                break;
             case "Nator":
                 scrollText.setText(R.string.natore_to_dinajpur);
                 break;
@@ -167,7 +169,24 @@ public class TransportActivity extends AppCompatActivity {
             case "Kishoreganj":
                 scrollText.setText(R.string.kishoreganj_to_dinajpur);
                 break;
-                
+
+            case "Jamalpur":
+                scrollText.setText(R.string.jamalpur_to_dinajpur);
+                break;
+
+            case "Barishal":
+                scrollText.setText(R.string.barishal_to_dinajpur);
+                break;
+
+            case "Thakurgaon":
+            case "Panchagarh":
+            case "Rangpur":
+                scrollText.setText(R.string.rangpur_to_dinajpur);
+                break;
+            case "Lalmonirhat":
+            case "Kurigram":
+                scrollText.setText(R.string.kurigram_to_dinajpur);
+                break;
             default:
                 scrollText.setText("Select a district to see transport options.");
 
