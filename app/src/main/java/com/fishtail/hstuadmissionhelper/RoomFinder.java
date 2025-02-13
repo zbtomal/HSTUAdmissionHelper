@@ -1,11 +1,14 @@
 package com.fishtail.hstuadmissionhelper;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,8 @@ public class RoomFinder extends AppCompatActivity {
     TextView txt_room_info;
     Button btn_submit_roll;
     FirebaseFirestore db;
+    ImageView img_map;
+    Button btn_google_map;
 
     String selectedUnit = "A"; // Default unit selection
 
@@ -37,8 +42,14 @@ public class RoomFinder extends AppCompatActivity {
         edt_roll = findViewById(R.id.edt_roll);
         txt_room_info = findViewById(R.id.txt_room_info);
         btn_submit_roll = findViewById(R.id.btn_submit_roll);
+        img_map = findViewById(R.id.img_map);
+        btn_google_map = findViewById(R.id.btn_google_map);
 
         txt_room_info.setVisibility(View.GONE);
+        img_map.setVisibility(View.GONE);
+        btn_google_map.setVisibility(View.GONE);
+
+
 
         // Setup Spinner with unit options
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -88,6 +99,8 @@ public class RoomFinder extends AppCompatActivity {
 
                     txt_room_info.setText("Room: " + roomNumber + "\nFloor: " + floor + "\nBuilding: " + buildingName);
                     txt_room_info.setVisibility(View.VISIBLE);
+
+                    viewMap(buildingId);
                 } else {
                     txt_room_info.setText("No room assigned for this roll.");
                     txt_room_info.setVisibility(View.VISIBLE);
@@ -99,6 +112,91 @@ public class RoomFinder extends AppCompatActivity {
         }).addOnFailureListener(e -> {
             Toast.makeText(RoomFinder.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private void viewMap(String buildingId) {
+        if (buildingId.equals("1")) {
+            img_map.setImageResource(R.drawable.map_wazed);
+            btn_google_map.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    // wazed building
+                    intent.setData(Uri.parse("https://maps.app.goo.gl/VHT1SnAdLicH9ipb6"));
+                    startActivity(intent);
+                }
+            });
+            img_map.setVisibility(View.VISIBLE);
+            btn_google_map.setVisibility(View.VISIBLE);
+        }
+        else if (buildingId.equals("2")) {
+            img_map.setImageResource(R.drawable.map_academic_1);
+            btn_google_map.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    // agri building
+                    intent.setData(Uri.parse("https://maps.app.goo.gl/XGKVA7TuanBBpaqP9"));
+                    startActivity(intent);
+                }
+            });
+            img_map.setVisibility(View.VISIBLE);
+            btn_google_map.setVisibility(View.VISIBLE);
+        }
+        else if (buildingId.equals("3")) {
+            img_map.setImageResource(R.drawable.map_academic_2);
+            btn_google_map.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    // Engineering building
+                    intent.setData(Uri.parse("https://maps.app.goo.gl/HW7xd7NLEp1oRFyM8"));
+                    startActivity(intent);
+                }
+            });
+            img_map.setVisibility(View.VISIBLE);
+            btn_google_map.setVisibility(View.VISIBLE);
+        }
+        else if (buildingId.equals("4")) {
+            img_map.setImageResource(R.drawable.map_dvm);
+
+            btn_google_map.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    // DVM building
+                    intent.setData(Uri.parse("https://maps.app.goo.gl/1PJZEdzf9F7KFfLH6"));
+                    startActivity(intent);
+                }
+            });
+            img_map.setVisibility(View.VISIBLE);
+            btn_google_map.setVisibility(View.VISIBLE);
+        }
+        else if (buildingId.equals("5")) {
+            img_map.setImageResource(R.drawable.map_qudrate);
+            btn_google_map.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    // Qudrat-i-Khuda building
+                    intent.setData(Uri.parse("https://maps.app.goo.gl/xDUUHsou8TmFk31W8"));
+                    startActivity(intent);
+                }
+            });
+
+            img_map.setVisibility(View.VISIBLE);
+            btn_google_map.setVisibility(View.VISIBLE);
+        }
     }
 
     private String getBuildingName(String buildingId) {
