@@ -112,7 +112,7 @@ public class TransportActivity extends AppCompatActivity {
                 scrollText.setText(R.string.chattogram_to_dinajpur);
                 break;
             case "Rajshahi":
-                scrollText.setText("Buses: Desh Travels, Hanif\nTrain: Silk City Express, Dhumketu Express");
+                scrollText.setText(R.string.rajshahi_to_dinajpur);
                 break;
             case "Tangail":
             case "Sirajganj":
@@ -130,6 +130,44 @@ public class TransportActivity extends AppCompatActivity {
             case "Chandpur":
                 scrollText.setText(R.string.chandpur_to_dinajpur);
                 break;
+
+            case "Pabna":
+            case "Nator":
+                scrollText.setText(R.string.natore_to_dinajpur);
+                break;
+
+
+            case "Faridpur":
+                scrollText.setText(R.string.faridpur_to_dinajpur);
+                break;
+            case "Jashore":
+            case "Satkhira":
+            case "Narail":
+            case "Khulna":
+                scrollText.setText(R.string.khulna_to_dinajpur);
+                break;
+
+            case "Jhenaidah":
+            case "Meherpur":
+            case "Kushtia":
+                scrollText.setText(R.string.kushtia_to_dinajpur);
+                break;
+
+            case "Habiganj":
+            case "Moulvibazar":
+            case "Sunamganj":
+            case "Sylhet":
+                scrollText.setText(R.string.sylhet_to_dinajpur);
+                break;
+
+            case "Mymensingh":
+                scrollText.setText(R.string.mymensingh_to_dinajpur);
+                break;
+
+            case "Kishoreganj":
+                scrollText.setText(R.string.kishoreganj_to_dinajpur);
+                break;
+                
             default:
                 scrollText.setText("Select a district to see transport options.");
 
