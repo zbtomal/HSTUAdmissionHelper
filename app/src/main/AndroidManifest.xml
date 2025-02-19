@@ -16,6 +16,12 @@
         android:theme="@style/Theme.HSTUAdmissionHelper"
         tools:targetApi="31">
         <activity
+            android:name=".CustomListView"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutHSTUActivity"
             android:exported="false" />
         <activity

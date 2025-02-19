@@ -2,8 +2,11 @@ package com.fishtail.hstuadmissionhelper;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ public class ResultActivity extends AppCompatActivity {
     EditText edt_roll_result;
     TextView txt_result;
     Button btn_show_result;
+    Spinner spinner_unit;
 
     FirebaseFirestore db;  // Firestore instance
 
@@ -38,8 +42,33 @@ public class ResultActivity extends AppCompatActivity {
         edt_roll_result = findViewById(R.id.edt_roll_result);
         txt_result = findViewById(R.id.txt_result);
         btn_show_result = findViewById(R.id.btn_show_result);
+        spinner_unit=findViewById(R.id.spinner_unit);
 
         txt_result.setVisibility(View.GONE);
+
+        final String[] selectedUnit = {"A"};
+
+        // Setup Spinner with unit options
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.unit_options,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_unit.setAdapter(adapter);
+
+        // Handle unit selection
+        spinner_unit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedUnit[0] = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedUnit[0] = "A"; // Default to A if nothing is selected
+            }
+        });
 
         // Button click event
         btn_show_result.setOnClickListener(new View.OnClickListener() {
