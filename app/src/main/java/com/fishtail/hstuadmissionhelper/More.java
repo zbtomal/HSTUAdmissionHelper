@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class More extends AppCompatActivity {
 
     Button btn_about_hstu;
+    Button btn_about_us;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +22,22 @@ public class More extends AppCompatActivity {
 
         // Initialize buttons
         btn_about_hstu=findViewById(R.id.btn_about_HSTU);
+        btn_about_us=findViewById(R.id.btn_about_us);
+
 
         btn_about_hstu.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(More.this, AboutHSTUActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_about_us.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(More.this, AboutUsActivity.class);
                 startActivity(intent);
             }
         });
