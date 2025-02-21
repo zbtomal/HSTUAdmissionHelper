@@ -14,6 +14,7 @@ public class More extends AppCompatActivity {
 
     Button btn_about_hstu;
     Button btn_about_us;
+    Button btn_faq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class More extends AppCompatActivity {
         // Initialize buttons
         btn_about_hstu=findViewById(R.id.btn_about_HSTU);
         btn_about_us=findViewById(R.id.btn_about_us);
-
+        btn_faq=findViewById(R.id.btn_FAQ);
 
         btn_about_hstu.setOnClickListener(new View.OnClickListener(){
 
@@ -42,7 +43,13 @@ public class More extends AppCompatActivity {
             }
         });
 
-
+        btn_faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(More.this, FAQActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
