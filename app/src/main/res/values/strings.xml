@@ -244,6 +244,10 @@
     <string name="kurigram_to_dinajpur">
     প্রথমে রংপুর মেডিকেল কলেজ মোড়ে আসতে হবে। এখান থেকে প্রায় সকাল থেকে সন্ধ্যা অবধি প্রতি ১৫ মিনিট পর পর অসংখ্য বাস দিনাজপুরের উদ্দেশ্যে ছেড়ে আসে। এসব বাসগুলি সরাসরি ক্যাম্পাসের সামনে নামিয়ে দেবে।
 </string>
+    <string name="a_token_of_appreciation">We extend our sincere gratitude to sir Dr. Md. Delowar Hossain, whose guidance and encouragement have been instrumental in shaping this project. His continuous support and vision for technological advancement in education have inspired us to develop an app that contributes to the university community.\n\nWe hope HSTU Admission Helper makes the admission process smoother and more accessible for all aspiring students.</string>
+    <string name="txt_motivation">Applying to a university can be overwhelming, especially for first-time applicants. With multiple deadlines, required documents, and logistical challenges, students often struggle to keep track of everything. HSTU Admission Helper was born out of the need to provide a centralized platform that offers:\n \t✅ Important admission dates and deadlines\n \t✅ Exam center locations with easy navigation\n \t✅ Transport and accommodation information\n \t✅ Exam results updates\n \t✅ A notice board for important announcements\n</string>
+    <string name="txt_who_we_are">We are a team of passionate developers from the Department of Computer Science and Engineering (CSE), HSTU, currently working on this project as part of our Level 3, Semester-I coursework. Our team members are:</string>
+    <string name="about_us_welcome">Welcome to HSTU Admission Helper, a dedicated mobile application designed to streamline the admission process for prospective students of Hajee Mohammad Danesh Science and Technology University (HSTU).</string>
 
 
 </resources>
