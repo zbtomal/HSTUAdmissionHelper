@@ -52,7 +52,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
-                android:text="Welcome to HSTU Admission Helper, a dedicated mobile application designed to streamline the admission process for prospective students of Hajee Mohammad Danesh Science and Technology University (HSTU)."
+                android:text="@string/about_us_welcome"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
-                android:text="We are a team of passionate developers from the Department of Computer Science and Engineering (CSE), HSTU, currently working on this project as part of our Level 3, Semester-I coursework. Our team members are:"
+                android:text="@string/txt_who_we_are"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="14sp" />
@@ -114,12 +114,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
 
-                android:text="Applying to a university can be overwhelming, especially for first-time applicants. With multiple deadlines, required documents, and logistical challenges, students often struggle to keep track of everything. HSTU Admission Helper was born out of the need to provide a centralized platform that offers:\n
-\t✅ Important admission dates and deadlines\n
-\t✅ Exam center locations with easy navigation\n
-\t✅ Transport and accommodation information\n
-\t✅ Exam results updates\n
-\t✅ A notice board for important announcements\n"
+                android:text="@string/txt_motivation"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="14sp" />
@@ -156,7 +151,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
-                android:text="We extend our sincere gratitude to Dr. Md. Delowar Hossain, whose guidance and encouragement have been instrumental in shaping this project. His continuous support and vision for technological advancement in education have inspired us to develop an app that contributes to the university community.\n\nWe hope HSTU Admission Helper makes the admission process smoother and more accessible for all aspiring students." />
+                android:text="@string/a_token_of_appreciation" />
 
 
         </LinearLayout>
