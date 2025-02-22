@@ -1,9 +1,12 @@
 package com.fishtail.hstuadmissionhelper;
 
+import static android.view.View.GONE;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,6 +20,7 @@ public class TransportActivity extends AppCompatActivity {
 
     private Spinner spinnerDivision, spinnerDistrict;
     private TextView scrollText;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,10 @@ public class TransportActivity extends AppCompatActivity {
         spinnerDivision = findViewById(R.id.spinner_division);
         spinnerDistrict = findViewById(R.id.spinner_district);
         scrollText = findViewById(R.id.scrollText);
+        imageView = findViewById(R.id.imageView5);
+
+        //imageView.setVisibility(View.GONE);
+
 
         // Setup Division Spinner
         ArrayAdapter<CharSequence> divisionAdapter = ArrayAdapter.createFromResource(
@@ -107,52 +115,64 @@ public class TransportActivity extends AppCompatActivity {
         switch (district) {
             case "Dhaka":
                 scrollText.setText(R.string.dhaka_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Chattogram":
                 scrollText.setText(R.string.chattogram_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Rajshahi":
                 scrollText.setText(R.string.rajshahi_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Tangail":
             case "Sirajganj":
             case "Bogra":
                 scrollText.setText(R.string.bogra_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Cumilla":
                 scrollText.setText(R.string.cumilla_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Noakhali":
                 scrollText.setText(R.string.noakhali_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Chandpur":
                 scrollText.setText(R.string.chandpur_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Pabna":
                 scrollText.setText(R.string.pabna_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Natore":
                 scrollText.setText(R.string.natore_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
 
             case "Faridpur":
                 scrollText.setText(R.string.faridpur_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Jashore":
             case "Satkhira":
             case "Narail":
             case "Khulna":
                 scrollText.setText(R.string.khulna_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Jhenaidah":
             case "Meherpur":
             case "Kushtia":
                 scrollText.setText(R.string.kushtia_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Habiganj":
@@ -160,35 +180,43 @@ public class TransportActivity extends AppCompatActivity {
             case "Sunamganj":
             case "Sylhet":
                 scrollText.setText(R.string.sylhet_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Mymensingh":
                 scrollText.setText(R.string.mymensingh_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Kishoreganj":
                 scrollText.setText(R.string.kishoreganj_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Jamalpur":
                 scrollText.setText(R.string.jamalpur_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Barishal":
                 scrollText.setText(R.string.barishal_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
 
             case "Thakurgaon":
             case "Panchagarh":
             case "Rangpur":
                 scrollText.setText(R.string.rangpur_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             case "Lalmonirhat":
             case "Kurigram":
                 scrollText.setText(R.string.kurigram_to_dinajpur);
+                imageView.setVisibility(View.GONE);
                 break;
             default:
                 scrollText.setText("Select a district to see transport options.");
+                imageView.setVisibility(View.VISIBLE);
 
         }
     }
