@@ -192,12 +192,14 @@ public class TransportActivity extends AppCompatActivity {
                 scrollText.setText(R.string.kishoreganj_to_dinajpur);
                 imageView.setVisibility(View.GONE);
                 break;
-
+            case "Sherpur":
             case "Jamalpur":
                 scrollText.setText(R.string.jamalpur_to_dinajpur);
                 imageView.setVisibility(View.GONE);
                 break;
-
+            case "Bhola":
+            case "Jhalokati":
+            case "Patuakhali":
             case "Barishal":
                 scrollText.setText(R.string.barishal_to_dinajpur);
                 imageView.setVisibility(View.GONE);

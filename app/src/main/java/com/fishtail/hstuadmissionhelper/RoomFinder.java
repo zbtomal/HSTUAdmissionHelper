@@ -120,7 +120,7 @@ public class RoomFinder extends AppCompatActivity {
 
     private void viewMap(String buildingId) {
         if (buildingId.equals("1")) {
-            img_map.setImageResource(R.drawable.map_wazed);
+            img_map.setImageResource(R.drawable.wazed_building);
             btn_google_map.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -136,7 +136,7 @@ public class RoomFinder extends AppCompatActivity {
             btn_google_map.setVisibility(View.VISIBLE);
         }
         else if (buildingId.equals("2")) {
-            img_map.setImageResource(R.drawable.map_academic_1);
+            img_map.setImageResource(R.drawable.academic_building_1);
             btn_google_map.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -152,7 +152,7 @@ public class RoomFinder extends AppCompatActivity {
             btn_google_map.setVisibility(View.VISIBLE);
         }
         else if (buildingId.equals("3")) {
-            img_map.setImageResource(R.drawable.map_academic_2);
+            img_map.setImageResource(R.drawable.academic_building_2);
             btn_google_map.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -168,7 +168,7 @@ public class RoomFinder extends AppCompatActivity {
             btn_google_map.setVisibility(View.VISIBLE);
         }
         else if (buildingId.equals("4")) {
-            img_map.setImageResource(R.drawable.map_dvm);
+            img_map.setImageResource(R.drawable.academic_building_3);
 
             btn_google_map.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -185,7 +185,7 @@ public class RoomFinder extends AppCompatActivity {
             btn_google_map.setVisibility(View.VISIBLE);
         }
         else if (buildingId.equals("5")) {
-            img_map.setImageResource(R.drawable.map_qudrate);
+            img_map.setImageResource(R.drawable.quadrat_e_khuda_building);
             btn_google_map.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
