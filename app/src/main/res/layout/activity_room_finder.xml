@@ -88,18 +88,20 @@
             <ImageView
                 android:id="@+id/img_map"
                 android:layout_width="match_parent"
-                android:layout_height="226dp"
+                android:layout_height="280dp"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/map_wazed" />
+                android:src="@drawable/wazed_building"
+                />
 
             <Button
                 android:id="@+id/btn_google_map"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#002540"
                 android:text="View on Google Maps"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:backgroundTint="#002540"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 
