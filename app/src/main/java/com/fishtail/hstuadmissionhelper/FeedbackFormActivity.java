@@ -52,7 +52,8 @@ public class FeedbackFormActivity extends AppCompatActivity {
         String message = "Name: " + name + "\n\nFeedback: " + feedback;
 
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-        emailIntent.setData(Uri.parse("mailto:" + recipient)); // Only email apps will handle this
+        emailIntent.setData(Uri.parse("mailto:")); // Ensures only email apps are opened
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{recipient});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, message);
 
