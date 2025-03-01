@@ -1,7 +1,6 @@
 package com.fishtail.hstuadmissionhelper;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,7 +38,7 @@ public class FeedbackFormActivity extends AppCompatActivity {
                 String feedback = feedbackEditText.getText().toString().trim();
 
                 if (name.isEmpty() || feedback.isEmpty()) {
-                    Toast.makeText(FeedbackFormActivity.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedbackFormActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 } else {
                     sendFeedbackEmail(name, feedback);
                 }
@@ -48,21 +47,20 @@ public class FeedbackFormActivity extends AppCompatActivity {
     }
 
     private void sendFeedbackEmail(String name, String feedback) {
-        String recipient = "tomal.2102056@std.hstu.ac.bd";
+        String recipient = "feedback.hstu.admission@gmail.com";
         String subject = "Feedback from HSTU Admission Helper";
         String message = "Name: " + name + "\n\nFeedback: " + feedback;
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setType("message/rfc822"); // Ensures only email apps handle this
+        emailIntent.setType("message/rfc822"); // Ensures only email apps are listed
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{recipient});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, message);
 
         try {
-            startActivity(Intent.createChooser(emailIntent, "Send email using..."));
+            startActivity(Intent.createChooser(emailIntent, "Choose an email client"));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(this, "No email clients installed.", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
