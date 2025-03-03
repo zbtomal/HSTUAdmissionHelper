@@ -182,7 +182,7 @@ public class TransportActivity extends AppCompatActivity {
                 scrollText.setText(R.string.sylhet_to_dinajpur);
                 imageView.setVisibility(View.GONE);
                 break;
-
+            case "Netrokona":
             case "Mymensingh":
                 scrollText.setText(R.string.mymensingh_to_dinajpur);
                 imageView.setVisibility(View.GONE);
@@ -200,6 +200,8 @@ public class TransportActivity extends AppCompatActivity {
             case "Bhola":
             case "Jhalokati":
             case "Patuakhali":
+            case "Barguna":
+            case "Pirojpur":
             case "Barishal":
                 scrollText.setText(R.string.barishal_to_dinajpur);
                 imageView.setVisibility(View.GONE);
