@@ -10,11 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,7 +28,6 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_result);
 
         // Initialize Firestore
@@ -42,11 +37,11 @@ public class ResultActivity extends AppCompatActivity {
         edt_roll_result = findViewById(R.id.edt_roll_result);
         txt_result = findViewById(R.id.txt_result);
         btn_show_result = findViewById(R.id.btn_show_result);
-        spinner_unit=findViewById(R.id.spinner_unit);
+        spinner_unit = findViewById(R.id.spinner_unit);
 
-        txt_result.setVisibility(View.GONE);
+        txt_result.setVisibility(View.GONE); // Initially hide the result TextView
 
-        final String[] selectedUnit = {"A"};
+        final String[] selectedUnit = {"A"};  // Default unit is A
 
         // Setup Spinner with unit options
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -61,12 +56,12 @@ public class ResultActivity extends AppCompatActivity {
         spinner_unit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedUnit[0] = parent.getItemAtPosition(position).toString();
+                selectedUnit[0] = parent.getItemAtPosition(position).toString();  // Get selected unit
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                selectedUnit[0] = "A"; // Default to A if nothing is selected
+                selectedUnit[0] = "A";  // Default to A if nothing is selected
             }
         });
 
@@ -77,38 +72,41 @@ public class ResultActivity extends AppCompatActivity {
                 String roll = edt_roll_result.getText().toString().trim();
 
                 if (!roll.isEmpty()) {
-                    fetchResultData(roll);
+                    // Fetch result based on selected unit
+                    fetchResultData(roll, selectedUnit[0]);
                 } else {
                     Toast.makeText(ResultActivity.this, "Please enter a roll number", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        // Handle window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 
-    private void fetchResultData(String roll) {
-        DocumentReference docRef = db.collection("student_results").document(roll);
+    private void fetchResultData(String roll, String unit) {
+        // Dynamically select the collection based on the unit
+        String collectionName = "result_" + unit;  // result_A, result_B, result_C, or result_D
 
+        // Get the reference to the student's document
+        DocumentReference docRef = db.collection(collectionName).document(roll);
+
+        // Fetch the result data from Firestore
         docRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
-                    String result = document.getString("result"); // Fetch the result field
-                    txt_result.setText("Result: " + result);
-                    txt_result.setVisibility(View.VISIBLE);
+                    // Get the result and student name
+                    String result = document.getString("result");
+                    String studentName = document.getString("student_name");
+
+                    // Display result and student name
+                    txt_result.setText("Name: " + studentName + "\nResult: " + result);
+                    txt_result.setVisibility(View.VISIBLE);  // Show result
                 } else {
                     txt_result.setText("No result found for this roll.");
-                    txt_result.setVisibility(View.VISIBLE);
+                    txt_result.setVisibility(View.VISIBLE);  // Show message if no result found
                 }
             } else {
                 txt_result.setText("Error fetching data.");
-                txt_result.setVisibility(View.VISIBLE);
+                txt_result.setVisibility(View.VISIBLE);  // Show error message
             }
         }).addOnFailureListener(e -> {
             Toast.makeText(ResultActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
