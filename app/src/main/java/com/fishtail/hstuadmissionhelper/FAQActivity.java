@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 public class FAQActivity extends AppCompatActivity {
 
@@ -22,17 +22,14 @@ public class FAQActivity extends AppCompatActivity {
         setContentView(R.layout.activity_faqactivity);
 
         WebView webview = findViewById(R.id.web);
-
-
-
         webview.loadUrl("https://hstu.ac.bd/admission/faq_2025");
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        // Extended Floating Action Button (EFAB)
+        ExtendedFloatingActionButton efab = findViewById(R.id.fab);
+        efab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(FAQActivity.this, FeedbackFormActivity.class);
+                Intent intent = new Intent(FAQActivity.this, FeedbackFormActivity.class);
                 startActivity(intent);
             }
         });

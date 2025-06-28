@@ -33,7 +33,7 @@ import android.Manifest;
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_NOTIFICATION_PERMISSION = 1001;
     private static final String TAG = "MainActivity";
-
+    
     CardView roomCard;
     CardView transportCard;
     CardView importantDatesCard;
