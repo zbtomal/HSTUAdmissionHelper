@@ -16,6 +16,10 @@
         android:theme="@style/Theme.HSTUAdmissionHelper"
         tools:targetApi="31">
         <activity
+            android:name=".ChatBotActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+        <activity
             android:name=".FeedbackFormActivity"
             android:exported="false" />
         <activity

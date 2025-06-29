@@ -25,11 +25,21 @@ public class FAQActivity extends AppCompatActivity {
         webview.loadUrl("https://hstu.ac.bd/admission/faq_2025");
 
         // Extended Floating Action Button (EFAB)
-        ExtendedFloatingActionButton efab = findViewById(R.id.fab);
+        ExtendedFloatingActionButton efab = findViewById(R.id.fab_mail);
+        ExtendedFloatingActionButton fabAskAI = findViewById(R.id.fab_ask_ai);
+
         efab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FAQActivity.this, FeedbackFormActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        fabAskAI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FAQActivity.this, ChatBotActivity.class);
                 startActivity(intent);
             }
         });
