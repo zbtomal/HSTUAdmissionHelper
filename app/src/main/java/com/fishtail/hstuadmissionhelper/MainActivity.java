@@ -119,11 +119,11 @@ public class MainActivity extends AppCompatActivity {
         // Image Slider
         imageSlider=findViewById(R.id.imageSlider);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.hstu_main_gate, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.hstu_img2, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.hstu_img3, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.hstu_img4, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.hstu_img5, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_new1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_new2, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_new3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_new4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.hstu_new5, ScaleTypes.FIT));
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 
 
