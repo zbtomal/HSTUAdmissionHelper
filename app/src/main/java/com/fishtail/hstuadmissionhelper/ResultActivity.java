@@ -16,6 +16,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+/**
+ * This activity allows users to check their admission test results.
+ * Users can enter their roll number, select a unit, and view their result.
+ * The result data is fetched from a Firestore database.
+ */
 public class ResultActivity extends AppCompatActivity {
 
     EditText edt_roll_result;
@@ -25,6 +30,15 @@ public class ResultActivity extends AppCompatActivity {
 
     FirebaseFirestore db;  // Firestore instance
 
+    /**
+     * Called when the activity is first created.
+     * This method initializes the UI elements, sets up the spinner for unit selection,
+     * and defines the click listener for the "Show Result" button.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +95,13 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Fetches the result data from the Firestore database based on the provided roll number and unit.
+     * The result is then displayed in the `txt_result` TextView.
+     *
+     * @param roll The roll number of the student.
+     * @param unit The academic unit (e.g., "A", "B", "C").
+     */
     private void fetchResultData(String roll, String unit) {
         // Dynamically select the collection based on the unit
         String collectionName = "result_" + unit;  // result_A, result_B, result_C, or result_D
